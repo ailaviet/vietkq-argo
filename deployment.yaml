@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-app
-  labels:
-    app: simple-app
+  name: demo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-app
+      app: demo-app
   template:
     metadata:
       labels:
-        app: simple-app
+        app: demo-app
     spec:
       containers:
-        - name: simple-app
-          image: nginx:latest
+        - name: demo-app
+          image: nginx:alpine
           ports:
             - containerPort: 80
